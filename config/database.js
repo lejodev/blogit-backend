@@ -1,17 +1,17 @@
 const path = require('path');
 
 module.exports = ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite');
+  const client = env('DATABASE_CLIENT', 'postgres');
 
   const connections = {
     mysql: {
       connection: {
         connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
-        port: env.int('DATABASE_PORT', 3306),
-        database: env('DATABASE_NAME', 'strapi'),
-        user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        host: env('DATABASE_HOST', 'aws-0-us-west-1.pooler.supabase.com'),
+        port: env.int('DATABASE_PORT', 6543),
+        database: env('DATABASE_NAME', 'postgres'),
+        user: env('DATABASE_USERNAME', 'postgres.bogirwhmabnyngbkiqrq'),
+        password: env('DATABASE_PASSWORD', 'strapi-db-pass-2023'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),

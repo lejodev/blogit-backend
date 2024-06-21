@@ -381,6 +381,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   attributes: {
     title: Attribute.String &
       Attribute.Required &
+      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -404,13 +405,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     coverImage: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
-        };
-      }>;
-    BlogId: Attribute.UID<'api::blog.blog', 'title'> &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     category: Attribute.Relation<

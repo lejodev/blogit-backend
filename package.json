@@ -5,7 +5,7 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "NODE_OPTIONS=--max-old-space-size=4096 strapi start",
+    "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
@@ -32,5 +32,8 @@
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.7"
+  }
 }
